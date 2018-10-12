@@ -10,6 +10,8 @@ namespace FourInARow_consoleGame
     {
         char[,] twoDimensionalArray = new char[6,6];
 
+        //Bitch ass
+
         /// <summary>
         /// get a singel value from our two dimensional array
         /// </summary>
