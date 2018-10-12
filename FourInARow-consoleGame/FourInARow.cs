@@ -8,17 +8,19 @@ namespace FourInARow_consoleGame
 {
     class FourInARow
     {
-        char[,] twoDimensionalArray = new char[6,6];
+        public Checkers checkers = new Checkers();
+       
+        public char[,] ConnectFourArray= new char[6,6];
         
         /// <summary>
-        /// get a singel value from our two dimensional array
+        /// get a single value from our two dimensional array
         /// </summary>
         /// <param name="x">x axis</param>
         /// <param name="y">y axis</param>
         /// <returns></returns>
         public char getSingleValue(int x, int y)
         {
-            return twoDimensionalArray[x, y];
+            return ConnectFourArray[x, y];
         }
 
         /// <summary>
@@ -28,11 +30,21 @@ namespace FourInARow_consoleGame
         /// <param name="y">y axis position</param>
         /// <param name="value">the char you want to set</param>
         /// <returns></returns>
-        public char setSingleValue(int x, int y, char value)
+      public void setSingleValue(int x, int y, char value)
         {
-             twoDimensionalArray[x, y] = value;
+            ConnectFourArray[x, y] = value;
+            for (int i = 0; i < 6; i++)
+            {
+                for (int j = 0; j < 6; j++)
+                {
+                    ConnectFourArray[i, j] = 'O';
+                }
+            }
         }
-    }
 
-    
+        public FourInARow()
+        {
+            Console.WriteLine(checkers);
+        }
+    }   
 }
