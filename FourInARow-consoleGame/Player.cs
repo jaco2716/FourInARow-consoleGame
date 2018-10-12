@@ -20,7 +20,7 @@ namespace FourInARow_consoleGame
         public void Play1()
         {
             Console.WriteLine("Player 1: Hvor vil du ligge din brik?");
-             placementx = Convert.ToInt32(Console.ReadLine());
+            placementx = Convert.ToInt32(Console.ReadLine());
             for (int i = 5; i >= 0; i--)
             {
                 if (game.ConnectFourArray[i, placementx-1] == ' ')
@@ -28,10 +28,7 @@ namespace FourInARow_consoleGame
                     game.setSingleValue(i,placementx-1,player1);
                     break;
                 }
-            }
-            
-             
-           
+            }                                   
         }
         public void Play2()
         {
@@ -44,9 +41,7 @@ namespace FourInARow_consoleGame
                     game.setSingleValue(i,placementx-1, player2);
                     break;
                 }
-            }
-           
+            }          
         }
-
     }
 }
