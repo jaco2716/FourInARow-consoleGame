@@ -11,6 +11,7 @@ namespace FourInARow_consoleGame
         public Checkers checkers;
         public Player players;
         public char[,] ConnectFourArray= new char[6,6];
+        private bool gameover = false;
         
        
 
@@ -41,10 +42,12 @@ namespace FourInARow_consoleGame
         {
             checkers = new Checkers(this);
             checkers.Start();
+            while (gameover != true)
+            {
             Console.WriteLine(checkers);
             players = new Player(this);
             players.Play();
-            Console.WriteLine(checkers);
+            
 
 //            checkers = new Checkers(this);
 //            for (int i = 0; i < 6; i++)
@@ -53,7 +56,8 @@ namespace FourInARow_consoleGame
 //                {
 //                    ConnectFourArray[i, j] = ' ';
 //                }
-//            }           
+//            } 
+            }
             
         }
     }   
