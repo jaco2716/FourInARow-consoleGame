@@ -9,7 +9,7 @@ namespace FourInARow_consoleGame
     class FourInARow
     {
         public Checkers checkers;
-       
+        public Player players;
         public char[,] ConnectFourArray= new char[6,6];
         
        
@@ -40,14 +40,21 @@ namespace FourInARow_consoleGame
         public FourInARow()
         {
             checkers = new Checkers(this);
-            for (int i = 0; i < 6; i++)
-            {
-                for (int j = 0; j < 6; j++)
-                {
-                    ConnectFourArray[i, j] = 'O';
-                }
-            }
+            checkers.Start();
             Console.WriteLine(checkers);
+            players = new Player(this);
+            players.Play();
+            Console.WriteLine(checkers);
+
+//            checkers = new Checkers(this);
+//            for (int i = 0; i < 6; i++)
+//            {
+//                for (int j = 0; j < 6; j++)
+//                {
+//                    ConnectFourArray[i, j] = ' ';
+//                }
+//            }           
+            
         }
     }   
 }

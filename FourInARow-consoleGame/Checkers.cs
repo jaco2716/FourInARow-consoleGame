@@ -14,9 +14,18 @@ namespace FourInARow_consoleGame
         {
             this.game = game; 
         }
-      
 
 
+        public void Start()
+        {
+            for (int i = 0; i < 6; i++)
+            {
+                for (int j = 0; j < 6; j++)
+                {
+                    game.ConnectFourArray[i, j] = ' ';
+                }
+            }          
+        }
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
@@ -24,7 +33,9 @@ namespace FourInARow_consoleGame
             {
                 for (int j = 0; j < 6; j++)
                 {
+                    sb.Append("|");
                     sb.Append(game.getSingleValue(i, j));
+                    sb.Append("|");
                 }
                 sb.Append("\n");
             }
