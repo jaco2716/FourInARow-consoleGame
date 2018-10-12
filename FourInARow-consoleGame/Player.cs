@@ -10,7 +10,6 @@ namespace FourInARow_consoleGame
     {
         public FourInARow game;
         public int placementx;
-        public int placementy;
         public char player1 = 'O';
         public char player2 = 'X';
 
@@ -18,12 +17,34 @@ namespace FourInARow_consoleGame
         {
             this.game = game;
         }
-        public void Play()
+        public void Play1()
         {
             Console.WriteLine("Hvor x,y vil du lægge din brik?");
              placementx = Convert.ToInt32(Console.ReadLine());
-             placementy = Convert.ToInt32(Console.ReadLine());
-            game.setSingleValue(placementx, placementy, player1);
+            for (int i = 5; i >= 0; i--)
+            {
+                if (game.ConnectFourArray[i, placementx-1] == ' ')
+                {
+                    game.setSingleValue(i,placementx-1,player1);
+                    break;
+                }
+            }
+            
+             
+           
+        }
+        public void Play2()
+        {
+            Console.WriteLine("Hvor x,y vil du lægge din brik?");
+            placementx = Convert.ToInt32(Console.ReadLine());
+            for (int i = 5; i >= 0; i--)
+            {
+                if (game.ConnectFourArray[i, placementx-1] == ' ')
+                {
+                    game.setSingleValue(i,placementx-1, player2);
+                    break;
+                }
+            }
            
         }
 

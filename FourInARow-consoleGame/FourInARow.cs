@@ -12,8 +12,29 @@ namespace FourInARow_consoleGame
         public Player players;
         public char[,] ConnectFourArray= new char[6,6];
         private bool gameover = false;
-        
-       
+            
+        public FourInARow()
+        {
+            checkers = new Checkers(this);
+            players = new Player(this);
+            checkers.Start();
+            while (gameover != true)
+            {
+                Console.WriteLine(" 1  2  3  4  5  6 ");
+                Console.WriteLine("+----------------+");
+                Console.Write(checkers);
+                Console.WriteLine("+----------------+");
+                players.Play1();
+                Console.Clear();
+                Console.WriteLine(" 1  2  3  4  5  6 ");
+                Console.WriteLine("+----------------+");
+                Console.Write(checkers);  
+                Console.WriteLine("+----------------+");
+                players.Play2();
+                Console.Clear();
+            }
+            
+        }
 
         /// <summary>
         /// get a single value from our two dimensional array
@@ -38,27 +59,6 @@ namespace FourInARow_consoleGame
             ConnectFourArray[x, y] = value;
         }
 
-        public FourInARow()
-        {
-            checkers = new Checkers(this);
-            checkers.Start();
-            while (gameover != true)
-            {
-            Console.WriteLine(checkers);
-            players = new Player(this);
-            players.Play();
-            
-
-//            checkers = new Checkers(this);
-//            for (int i = 0; i < 6; i++)
-//            {
-//                for (int j = 0; j < 6; j++)
-//                {
-//                    ConnectFourArray[i, j] = ' ';
-//                }
-//            } 
-            }
-            
-        }
+        
     }   
 }
