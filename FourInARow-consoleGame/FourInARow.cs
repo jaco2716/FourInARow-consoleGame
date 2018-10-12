@@ -20,6 +20,7 @@ namespace FourInARow_consoleGame
             checkers.Start();
             while (gameover != true)
             {
+
                 Console.WriteLine(" 1  2  3  4  5  6 ");
                 Console.WriteLine("+----------------+");
                 Console.Write(checkers);

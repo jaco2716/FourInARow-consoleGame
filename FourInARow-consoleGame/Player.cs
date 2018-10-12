@@ -19,7 +19,7 @@ namespace FourInARow_consoleGame
         }
         public void Play1()
         {
-            Console.WriteLine("Hvor x,y vil du lægge din brik?");
+            Console.WriteLine("Player 1: Hvor vil du ligge din brik?");
              placementx = Convert.ToInt32(Console.ReadLine());
             for (int i = 5; i >= 0; i--)
             {
@@ -35,7 +35,7 @@ namespace FourInARow_consoleGame
         }
         public void Play2()
         {
-            Console.WriteLine("Hvor x,y vil du lægge din brik?");
+            Console.WriteLine("Player 2: Hvor vil du ligge din brik?");
             placementx = Convert.ToInt32(Console.ReadLine());
             for (int i = 5; i >= 0; i--)
             {
